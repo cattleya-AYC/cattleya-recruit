@@ -62,6 +62,16 @@
   
 .job-count{max-width:760px;margin:10px auto 0;padding:0 20px;color:#fff;font-size:15px}
 </style>
+
+<style>
+.apply-box{max-width:760px;margin:28px auto;background:#fff;border:2px solid #c9a882;border-radius:14px;padding:20px 16px;font-family:inherit}
+.apply-box h2{margin:0 0 8px;color:#3d2b1f;font-size:22px}.apply-box p{margin:0 0 14px;color:#66584d;font-size:14px;line-height:1.8}
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.apply-field{display:flex;flex-direction:column;gap:5px}.apply-field.full{grid-column:1/-1}
+.apply-field label{font-size:13px;font-weight:bold;color:#3d2b1f}.apply-field input,.apply-field select,.apply-field textarea{width:100%;border:1px solid #d9c7b6;border-radius:8px;padding:11px 10px;font:inherit;font-size:15px;background:#fffdfb;color:#2d241f}.apply-field textarea{min-height:92px;resize:vertical}
+.apply-submit{width:100%;margin-top:16px;border:0;border-radius:10px;padding:15px 12px;background:#3d2b1f;color:#fff;font:inherit;font-size:16px;font-weight:bold;cursor:pointer}.apply-note{margin-top:10px!important;font-size:12px!important;color:#8a7c70!important}
+@media(max-width:560px){.apply-grid{grid-template-columns:1fr}.apply-field.full{grid-column:auto}}
+</style>
+
 </head>
 <body>
   <header class="hero"><div class="inner">
@@ -87,5 +97,31 @@
     <section class="card apply"><h2>応募・お問い合わせ</h2><p>お電話またはメールで、「求人ページを見た」とお伝えください。勤務できる曜日・時間もあわせてお知らせください。</p><div class="buttons"><a class="btn phone" href="tel:0335042200">電話で応募　080-3032-5056</a><a class="btn mail" href="mailto:cattleya@via.tokyo.jp?subject=%E3%80%90%E3%82%AB%E3%83%88%E3%83%AC%E3%82%A2%E6%B1%82%E4%BA%BA%E3%80%91%E5%8E%A8%E6%88%BF%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E5%BF%9C%E5%8B%9F&body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%8A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E5%8B%A4%E5%8B%99%E3%81%A7%E3%81%8D%E3%82%8B%E6%9B%9C%E6%97%A5%E3%83%BB%E6%99%82%E9%96%93%EF%BC%9A%0A%E7%B0%A1%E5%8D%98%E3%81%AA%E7%B5%8C%E6%AD%B4%EF%BC%9A">メールで応募</a></div><p class="small">応募内容を確認後、面接についてご連絡します。</p></section>
     <p class="footer">株式会社エーワイシー　ラウンジ カトレア</p>
   </main>
+
+<section class="apply-box" id="apply">
+<h2>応募フォーム</h2>
+<p>必要事項をご入力のうえ送信してください。内容を確認後、担当者よりご連絡します。</p>
+<form action="https://formsubmit.co/cattleya@via.tokyo.jp" method="POST">
+<input type="hidden" name="_subject" value="【ラウンジ カトレア】採用応募フォーム">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://cattleya-recruit.vercel.app/">
+<div class="apply-grid">
+<div class="apply-field full"><label>希望職種</label><select name="希望職種" required><option selected>ホールスタッフ</option><option>厨房スタッフ</option><option>ホールスタッフ</option></select></div>
+<div class="apply-field"><label>お名前</label><input name="お名前" required></div>
+<div class="apply-field"><label>年齢</label><input name="年齢" inputmode="numeric" required></div>
+<div class="apply-field"><label>電話番号</label><input name="電話番号" type="tel" required></div>
+<div class="apply-field"><label>メールアドレス</label><input name="メールアドレス" type="email" required></div>
+<div class="apply-field"><label>希望勤務日数</label><select name="希望勤務日数" required><option value="">選択してください</option><option>週1日</option><option>週2日</option><option>週3日</option></select></div>
+<div class="apply-field"><label>希望開始時間</label><select name="希望開始時間" required><option value="">選択してください</option><option>15時から</option><option>16時から</option></select></div>
+<div class="apply-field full"><label>勤務可能な曜日</label><input name="勤務可能な曜日" placeholder="例：月・水・金"></div>
+<div class="apply-field"><label>飲食店勤務経験</label><select name="飲食店勤務経験" required><option value="">選択してください</option><option>あり</option><option>なし</option></select></div>
+<div class="apply-field"><label>連絡しやすい時間帯</label><input name="連絡しやすい時間帯" placeholder="例：18時以降"></div>
+<div class="apply-field full"><label>自己PR・質問など（任意）</label><textarea name="自己PR・質問など"></textarea></div>
+</div>
+<button class="apply-submit" type="submit">この内容で応募する</button>
+<p class="apply-note">送信後、初回のみ確認メールが届く場合があります。</p>
+</form></section>
+
 </body>
 </html>
